@@ -39,7 +39,27 @@ class Plant:
 
 
 
+class Flower(Plant):
+    def __init__(self, name, height, days, color, bloomed):
+        super().__init__(self, name, height, days)
+        self.color = color
+        self.bloomed = bloomed
+
+    def bloom(self):
+        self.bloomed = True
+
+    def show(self):
+        super().show()
+        print(f"Color: {self.color}")
+        if (self.bloomed):
+            print(f"{self.name.capilize()}, is blooming beautifully!")
+        else:
+            print(f"[asking the {self.name} to bloom]")
+
 
 if __name__ == "__main__":
-    
+    print("=== Garden Plant Types ===")
+    print("=== Flower")
+    flower = Flower("rose", 15, 10, "red", False)
+    flower.show()
 
