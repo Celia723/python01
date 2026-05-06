@@ -32,10 +32,10 @@ class Plant:
         print(f"{self.name}: {self.height:.1f}cm, {self.days} days old")
 
     def grow(self):
-        self.height += 0.8
+        self.height += 42
     
     def age(self):
-        self.days += 1
+        self.days += 20
 
 
 
@@ -82,6 +82,7 @@ class Vegetable(Plant):
         super().show()
         print(f"Harvest season: {self.season}")
         print(f"Nutritional value: {self.n_value}")
+
 
     def age(self):
         self.days += 20
