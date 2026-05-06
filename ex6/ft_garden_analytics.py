@@ -10,6 +10,7 @@ class Plant:
         self.height = height
         self.days = days
         self.stats = Plant.Stats()
+
     @staticmethod
     def is_older_than_year(days):
         return days > 365
@@ -27,6 +28,7 @@ class Plant:
     def show(self):
         print(f"{self.name}: {self.height:.1f}cm, {self.days} days old")
         self.stats.show_calls += 1
+
     def grow(self, new_height):
         self.height = new_height
         self.stats.grow_calls += 1
@@ -34,6 +36,7 @@ class Plant:
     def age(self, new_days):
         self.days = new_days
         self.stats.age_calls += 1
+
 
 class Flower(Plant):
     def __init__(self, name, height, days, color, bloomed):
@@ -65,14 +68,12 @@ class Tree(Plant):
     def show(self):
         super().show()
         print(f"Trunk diameter: {self.diameter:.1f}cm")
-        """
-        print(f"[asking the {self.name} to produce shade]")
-        print(f"Tree {self.name} now produces a shade of {self.height:.1f} long and {self.diameter:.1f} cm wide")
-"""
+
     def product_shade(self):
         print(f"[asking the {self.name} to produce shade]")
         print(f"Tree {self.name} now produces a shade of {self.height:.1f}cm long and {self.diameter}cm wide.")
         self.stats.shade_calls += 1
+
 
 class Vegetable(Plant):
     def __init__(self, name, height, days, season, n_value):
@@ -97,6 +98,7 @@ if __name__ == "__main__":
     print(f"Is 30 days more than a year?-> {planta.is_older_than_year(30)}")
     print(f"Is 400 days more than a year?-> {planta.is_older_than_year(400)}")
     print("\n")
+
     print("=== Flower")
     rosa = Flower("Rosa", 15, 10, "red", False)
     rosa.show()
@@ -105,6 +107,7 @@ if __name__ == "__main__":
     rosa.bloom()
     rosa.show()
     print("\n")
+
     print("=== Tree")
     oak = Tree("Oak", 200, 365, 5)
     oak.show()
