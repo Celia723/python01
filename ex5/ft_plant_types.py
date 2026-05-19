@@ -38,7 +38,7 @@ class Plant:
 
 class Flower(Plant):
     def __init__(self, name: str, height: float,
-                 days: int, color: str, bloomed: bool) -> None:
+                 days: int, color: str, bloomed: bool = False) -> None:
         super().__init__(name, height, days)
         self.color: str = color
         self.bloomed: bool = bloomed
